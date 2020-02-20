@@ -1,0 +1,14 @@
+sudo: required
+
+services:
+  - docker
+  
+before_install:
+  - docker build -t umeshsb/docker-react -f Dockerfile.dev .  
+  
+
+# Include all commands to run test suite
+
+script:
+# --Coverage to exit automatically when test suite completes.
+  - docker run umeshsb/docker-react npm run test -- --coverage
