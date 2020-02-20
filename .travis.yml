@@ -11,4 +11,5 @@ before_install:
 
 script:
 # --Coverage to exit automatically when test suite completes.
-  - docker run umeshsb/docker-react npm run test -- --coverage
+# By default npm test runs the watcher with interactive CLI. However, you can force it to run tests once and finish the process by setting an environment variable called CI.
+  -  docker run -e CI=true umeshsb/docker-react npm run test -- --coverage
