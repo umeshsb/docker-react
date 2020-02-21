@@ -13,3 +13,17 @@ script:
 # --Coverage to exit automatically when test suite completes.
 # By default npm test runs the watcher with interactive CLI. However, you can force it to run tests once and finish the process by setting an environment variable called CI.
   -  docker run -e CI=true umeshsb/docker-react npm run test -- --coverage
+  
+deploy:
+  edge: true
+  provider: elasticbeanstalk
+  region:  "us-east-1"
+  app:  "docker-react"
+  env: "DockerReact-env"
+  bucket_name: "elasticbeanstalk-us-east-1-167238676731"
+  bucket_path: "docker-react" # same name as app
+  on:
+    branch: master # only code is merged to master then deploy
+    access_key_id: $AWS_ACCESS_KEY #These placeholders are added in Travis GUI Project option environment variables. 
+    secret_access_key: 
+       secure: "$AWS_SECRET_KEY"
