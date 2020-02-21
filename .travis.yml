@@ -24,6 +24,6 @@ deploy:
   bucket_path: "docker-react" # same name as app
   on:
     branch: master # only code is merged to master then deploy
-    access_key_id: "$AWS_ACCESS_KEY" #These placeholders are added in Travis GUI Project option environment variables. 
+    access_key_id: $AWS_ACCESS_KEY #These placeholders are added in Travis GUI Project option environment variables. 
     secret_access_key: 
-       secure: "$AWS_SECRET_KEY"
+       secure: $AWS_SECRET_KEY
