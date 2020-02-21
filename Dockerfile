@@ -13,6 +13,7 @@ RUN npm run build
 
 # ngnix Image for hosting static content.
 FROM nginx
+EXPOSE 80
 
 # from different phase
 COPY --from=builder /app/build /usr/share/nginx/html
