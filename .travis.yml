@@ -25,7 +25,8 @@ deploy:
   on:
     branch: master 
     # only code is merged to master then deploy
-    access_key_id: $AWS_ACCESS_KEY
+    access_key_id: 
+      secure: "$AWS_ACCESS_KEY"
     #These placeholders are added in Travis GUI Project option environment variables. 
     secret_access_key:
        secure: "$AWS_SECRET_KEY"
